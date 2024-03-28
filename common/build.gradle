@@ -1,5 +1,6 @@
 architectury {
-    common(rootProject.enabled_platforms.split("," as Closure))
+    //noinspection GroovyAssignabilityCheck
+    common(rootProject.enabled_platforms.split(","))
 }
 
 loom {
