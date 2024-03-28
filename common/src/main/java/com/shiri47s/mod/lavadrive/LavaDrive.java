@@ -19,6 +19,7 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.BiomeTags;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.PlacedFeature;
 
@@ -89,7 +90,7 @@ public class LavaDrive
 			LavaDriveBlocks.register(
 					Ids.RedDiamondOreKey,
 					() -> new ExperienceDroppingBlock(
-							//UniformIntProvider.create(3, 7),
+							UniformIntProvider.create(3, 7),
 							AbstractBlock.Settings.create().
 									mapColor(MapColor.STONE_GRAY).
 									instrument(Instrument.BASEDRUM).
@@ -101,7 +102,7 @@ public class LavaDrive
 			LavaDriveBlocks.register(
 					Ids.DeepslateRedDiamondOreKey,
 					() -> new ExperienceDroppingBlock(
-							//UniformIntProvider.create(3, 7),
+							UniformIntProvider.create(3, 7),
 							AbstractBlock.Settings.create().
 									mapColor(MapColor.DEEPSLATE_GRAY).
 									instrument(Instrument.BASEDRUM).
