@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lavadrive:block/red_diamond_ore"
+  }
+}

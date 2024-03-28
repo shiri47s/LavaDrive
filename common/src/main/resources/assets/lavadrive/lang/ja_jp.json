@@ -1,0 +1,17 @@
+{
+  "item.lavadrive.red_diamond": "レッドダイヤモンド",
+  "item.lavadrive.red_diamond_ingot": "レッドダイヤモンドインゴット",
+  "block.lavadrive.red_diamond_ore": "レッドダイヤモンド鉱石",
+  "block.lavadrive.deepslate_red_diamond_ore": "ディープスレートレッドダイヤモンド鉱石",
+  "item.lavadrive.lava_upgrade_smithing_template": "マグマの鍛冶型",
+
+  "item.lavadrive.lava_helmet": "マグマヘルメット",
+  "item.lavadrive.lava_chestplate": "マグマチェストプレート",
+  "item.lavadrive.lava_leggings": "マグマレギンス",
+  "item.lavadrive.lava_boots": "マグマブーツ",
+  "item.lavadrive.lava_armors.tooltip_summary0": "マグマシリーズをフルセットで",
+  "item.lavadrive.lava_armors.tooltip_summary1": "装備するとセットボーナス",
+  "item.lavadrive.lava_armors.tooltip_resist": " - マグマへの永久耐性",
+  "item.lavadrive.lava_armors.tooltip_vision": " - マグマ中での視野向上",
+  "item.lavadrive.lava_armors.tooltip_speed": " - マグマ中での移動速度向上"
+}

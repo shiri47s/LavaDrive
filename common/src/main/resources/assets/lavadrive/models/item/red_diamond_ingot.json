@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "lavadrive:item/red_diamond_ingot"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "item.lavadrive.red_diamond": "Red Diamond",
+  "item.lavadrive.red_diamond_ingot": "Red Diamond Ingot",
+  "block.lavadrive.red_diamond_ore": "Red Diamond Ore",
+  "block.lavadrive.deepslate_red_diamond_ore": "Deepslate Red Diamond Ore",
+  "item.lavadrive.lava_upgrade_smithing_template": "Lava Smithing Template",
+
+  "item.lavadrive.lava_helmet": "Lava Helmet",
+  "item.lavadrive.lava_chestplate": "Lava Chestplate",
+  "item.lavadrive.lava_leggings": "Lava Leggings",
+  "item.lavadrive.lava_boots": "Lava Boots",
+  "item.lavadrive.lava_armors.tooltip_summary0": "Set bonus is given when ALL",
+  "item.lavadrive.lava_armors.tooltip_summary1": "LAVA armor series are equipped",
+  "item.lavadrive.lava_armors.tooltip_resist": " - Permanent lava resistance",
+  "item.lavadrive.lava_armors.tooltip_vision": " - Permanent lava vision",
+  "item.lavadrive.lava_armors.tooltip_speed": " - Permanent speed in lava"
+}

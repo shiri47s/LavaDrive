@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "lavadrive:lava_helmet",
+    "lavadrive:lava_chestplate",
+    "lavadrive:lava_leggings",
+    "lavadrive:lava_boots"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "lavadrive:red_diamond_ingot"
+  },
+  "base": {
+    "item": "minecraft:netherite_leggings"
+  },
+  "result": {
+    "item": "lavadrive:lava_leggings"
+  },
+  "template": {
+    "item": "lavadrive:lava_upgrade_smithing_template"
+  }
+}

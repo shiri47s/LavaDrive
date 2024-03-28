@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "red_diamond_ingot",
+  "ingredients": [
+    {
+      "item": "lavadrive:red_diamond"
+    },
+    {
+      "item": "lavadrive:red_diamond"
+    },
+    {
+      "item": "lavadrive:red_diamond"
+    },
+    {
+      "item": "lavadrive:red_diamond"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    }
+  ],
+  "result": {
+    "item": "lavadrive:red_diamond_ingot"
+  }
+}
