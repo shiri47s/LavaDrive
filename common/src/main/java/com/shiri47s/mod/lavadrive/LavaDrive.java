@@ -90,7 +90,7 @@ public class LavaDrive
 			LavaDriveBlocks.register(
 					Ids.RedDiamondOreKey,
 					() -> new ExperienceDroppingBlock(
-							UniformIntProvider.create(3, 7),
+							//UniformIntProvider.create(3, 7),
 							AbstractBlock.Settings.create().
 									mapColor(MapColor.STONE_GRAY).
 									instrument(Instrument.BASEDRUM).
@@ -102,7 +102,7 @@ public class LavaDrive
 			LavaDriveBlocks.register(
 					Ids.DeepslateRedDiamondOreKey,
 					() -> new ExperienceDroppingBlock(
-							UniformIntProvider.create(3, 7),
+							//UniformIntProvider.create(3, 7),
 							AbstractBlock.Settings.create().
 									mapColor(MapColor.DEEPSLATE_GRAY).
 									instrument(Instrument.BASEDRUM).
