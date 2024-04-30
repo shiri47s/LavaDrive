@@ -4,7 +4,7 @@ import net.minecraft.item.ArmorMaterial;
 
 public class LavaLeggings extends LavaArmorItem {
 
-    public LavaLeggings(ArmorMaterial material, Settings settings) {
-        super(material, Type.LEGGINGS, settings);
+    public LavaLeggings(Settings settings) {
+        super(Type.LEGGINGS, settings);
     }
 }

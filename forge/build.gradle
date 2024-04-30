@@ -1,24 +1,15 @@
 plugins {
     id "com.github.johnrengelman.shadow" version "7.1.2"
-    id "com.modrinth.minotaur" version "2.+"
 }
-
+loom {
+    forge {
+        mixinConfig "templatemodv1205-common.mixins.json"
+        mixinConfig "templatemodv1205.mixins.json"
+    }
+}
 architectury {
     platformSetupLoomIde()
     forge()
-}
-
-loom {
-    accessWidenerPath = project(":common").loom.accessWidenerPath
-
-    forge {
-        convertAccessWideners = true
-        extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
-
-        mixinConfig "lavadrive-common.mixins.json"
-        mixinConfig "lavadrive.mixins.json"
-        loom.mixin.useLegacyMixinAp = true
-    }
 }
 
 configurations {
@@ -48,16 +39,19 @@ processResources {
 
 shadowJar {
     exclude "fabric.mod.json"
-    exclude "architectury.common.json"
 
     configurations = [project.configurations.shadowCommon]
     archiveClassifier = "dev-shadow"
 }
 
 remapJar {
-    //noinspection GrDeprecatedAPIUsage
-    input.set shadowJar.archiveFile
+    inputFile.set(shadowJar.archiveFile)
     dependsOn shadowJar
+    archiveClassifier.set(null)
+}
+
+jar {
+    archiveClassifier.set("dev")
 }
 
 sourcesJar {
@@ -74,7 +68,6 @@ components.java {
 
 publishing {
     publications {
-        //noinspection GroovyAssignabilityCheck
         mavenForge(MavenPublication) {
             artifactId = rootProject.archives_base_name + "-" + project.name
             from components.java
@@ -84,20 +77,5 @@ publishing {
     // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
     repositories {
         // Add repositories to publish to here.
-    }
-}
-
-modrinth {
-    token = System.getenv("MODRINTH_TOKEN")
-    projectId = "hQjeTmD7"
-
-    versionNumber = project.mod_version
-    versionType = "beta"
-    uploadFile = remapJar
-    gameVersions = ["${project.minecraft_version}"]
-    loaders = ["forge"]
-    dependencies {
-        required.project "fabric-api"
-        required.project "architectury-api"
     }
 }

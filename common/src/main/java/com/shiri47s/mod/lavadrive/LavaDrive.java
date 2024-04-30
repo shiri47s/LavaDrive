@@ -46,30 +46,22 @@ public class LavaDrive
 	public static RegistrySupplier<Item> LavaHelmetItem =
 			LavaDriveItems.register(
 					Ids.HelmetKey,
-					() -> new LavaHelmet(
-							new LavaArmorMaterials(),
-							new Item.Settings()));
+					() -> new LavaHelmet(new Item.Settings()));
 
 	public static RegistrySupplier<Item> LavaChestplateItem =
 			LavaDriveItems.register(
 					Ids.ChestplateKey,
-					() -> new LavaChestplate(
-							new LavaArmorMaterials(),
-							new Item.Settings()));
+					() -> new LavaChestplate(new Item.Settings()));
 
 	public static RegistrySupplier<Item> LavaLeggingsItem =
 			LavaDriveItems.register(
 					Ids.LeggingsKey,
-					() -> new LavaLeggings(
-							new LavaArmorMaterials(),
-							new Item.Settings()));
+					() -> new LavaLeggings(new Item.Settings()));
 
 	public static RegistrySupplier<Item> LavaBootsItem =
 			LavaDriveItems.register(
 					Ids.BootsKey,
-					() -> new LavaBoots(
-							new LavaArmorMaterials(),
-							new Item.Settings()));
+					() -> new LavaBoots(new Item.Settings()));
 
 	public static RegistrySupplier<Item> RedDiamondItem =
 			LavaDriveItems.register(

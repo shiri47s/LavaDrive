@@ -1,10 +1,5 @@
 architectury {
-    //noinspection GroovyAssignabilityCheck
     common(rootProject.enabled_platforms.split(","))
-}
-
-loom {
-    accessWidenerPath = file("src/main/resources/lavadrive.accesswidener")
 }
 
 dependencies {
@@ -17,10 +12,8 @@ dependencies {
 
 publishing {
     publications {
-        //noinspection GroovyAssignabilityCheck
         mavenCommon(MavenPublication) {
             artifactId = rootProject.archives_base_name
-            //noinspection GroovyAssignabilityCheck
             from components.java
         }
     }

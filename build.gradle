@@ -28,10 +28,7 @@ allprojects {
     apply plugin: "architectury-plugin"
     apply plugin: "maven-publish"
 
-    base {
-        archivesName = rootProject.archives_base_name + "_v" + rootProject.minecraft_version
-    }
-
+    archivesBaseName = rootProject.archives_base_name
     version = rootProject.mod_version
     group = rootProject.maven_group
 
@@ -43,9 +40,9 @@ allprojects {
         // for more information about repositories.
     }
 
-    tasks.withType(JavaCompile).configureEach {
+    tasks.withType(JavaCompile) {
         options.encoding = "UTF-8"
-        options.release = 17
+        options.release.set(17)
     }
 
     java {

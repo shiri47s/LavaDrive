@@ -2,24 +2,23 @@ package com.shiri47s.mod.lavadrive.items;
 
 import com.shiri47s.mod.lavadrive.LavaDrive;
 import com.shiri47s.mod.lavadrive.RenderingContext;
-import net.minecraft.client.item.TooltipContext;
+import com.shiri47s.mod.lavadrive.materials.LavaArmorMaterials;
+import net.minecraft.client.item.TooltipType;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ArmorItem;
-import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Rarity;
-import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
 public abstract class LavaArmorItem extends ArmorItem {
-    public LavaArmorItem(ArmorMaterial material, Type type, Settings settings) {
-        super(material, type, settings);
+    public LavaArmorItem(Type type, Settings settings) {
+        super(LavaArmorMaterials.INSTANCE, type, settings.fireproof().rarity(Rarity.RARE).maxDamage(type.getMaxDamage(43)));
     }
 
     public static boolean isWearLavaSets(Entity entity) {
@@ -27,7 +26,11 @@ public abstract class LavaArmorItem extends ArmorItem {
         AtomicReference<Boolean> wearLavaChestplate = new AtomicReference<>(false);
         AtomicReference<Boolean> wearLavaLeggings = new AtomicReference<>(false);
         AtomicReference<Boolean> wearLavaBoots = new AtomicReference<>(false);
-        Iterable<ItemStack> armorItems = entity.getArmorItems();
+        if (!(entity instanceof PlayerEntity player)) {
+            return false;
+        }
+
+        Iterable<ItemStack> armorItems = player.getArmorItems();
         armorItems.forEach((armorItem) -> {
             if (armorItem.getItem() == LavaDrive.LavaHelmetItem.get()) {
                 wearLavaHelmet.set(true);
@@ -50,17 +53,7 @@ public abstract class LavaArmorItem extends ArmorItem {
     }
 
     @Override
-    public boolean isFireproof() {
-        return true;
-    }
-
-    @Override
-    public Rarity getRarity(ItemStack stack) {
-        return Rarity.RARE;
-    }
-
-    @Override
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         tooltip.add(Text.translatable("item.lavadrive.lava_armors.tooltip_summary0").formatted(Formatting.YELLOW));
         tooltip.add(Text.translatable("item.lavadrive.lava_armors.tooltip_summary1").formatted(Formatting.YELLOW));
 

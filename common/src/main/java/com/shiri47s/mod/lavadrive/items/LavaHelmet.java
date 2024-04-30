@@ -5,7 +5,7 @@ import net.minecraft.item.Item;
 
 public class LavaHelmet extends LavaArmorItem {
 
-    public LavaHelmet(ArmorMaterial material, Item.Settings settings) {
-        super(material, Type.HELMET, settings);
+    public LavaHelmet(Item.Settings settings) {
+        super(Type.HELMET, settings);
     }
 }
