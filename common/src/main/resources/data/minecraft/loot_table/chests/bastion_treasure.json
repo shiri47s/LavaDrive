@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "lavadrive:lava_upgrade_smithing_template"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

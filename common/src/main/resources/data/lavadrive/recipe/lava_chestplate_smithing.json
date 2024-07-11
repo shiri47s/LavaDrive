@@ -4,10 +4,10 @@
     "item": "lavadrive:red_diamond_ingot"
   },
   "base": {
-    "item": "minecraft:netherite_helmet"
+    "item": "minecraft:netherite_chestplate"
   },
   "result": {
-    "item": "lavadrive:lava_helmet"
+    "id": "lavadrive:lava_chestplate"
   },
   "template": {
     "item": "lavadrive:lava_upgrade_smithing_template"

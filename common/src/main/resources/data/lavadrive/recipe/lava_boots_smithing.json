@@ -7,7 +7,7 @@
     "item": "minecraft:netherite_boots"
   },
   "result": {
-    "item": "lavadrive:lava_boots"
+    "id": "lavadrive:lava_boots"
   },
   "template": {
     "item": "lavadrive:lava_upgrade_smithing_template"
