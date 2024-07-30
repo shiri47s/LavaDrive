@@ -3,8 +3,10 @@ package com.shiri47s.mod.lavadrive;
 import com.shiri47s.mod.lavadrive.items.*;
 import com.shiri47s.mod.lavadrive.materials.LavaArmorMaterials;
 import dev.architectury.event.events.client.ClientTickEvent;
+import dev.architectury.registry.CreativeTabRegistry;
 import dev.architectury.registry.level.biome.BiomeModifications;
 import dev.architectury.registry.registries.DeferredRegister;
+import dev.architectury.registry.registries.DeferredSupplier;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -12,12 +14,12 @@ import net.minecraft.block.ExperienceDroppingBlock;
 import net.minecraft.block.MapColor;
 import net.minecraft.block.enums.Instrument;
 import net.minecraft.entity.damage.DamageType;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
+import net.minecraft.item.*;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.BiomeTags;
 import net.minecraft.registry.tag.TagKey;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.world.gen.GenerationStep;
@@ -27,6 +29,9 @@ import net.minecraft.world.gen.feature.PlacedFeature;
 public class LavaDrive
 {
 	public static final String MOD_ID = "lavadrive";
+
+	private static final DeferredRegister<ItemGroup> TAB_REGISTER = DeferredRegister.create(MOD_ID, RegistryKeys.ITEM_GROUP);
+	public static DeferredSupplier<ItemGroup> TAB_SUPPLIER;
 
 	public static final RegistryKey<PlacedFeature> RED_DIAMOND_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID, Ids.RedDiamondPlacedKey));
 	public static final RegistryKey<PlacedFeature> RED_DIAMOND_HIGHER_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(MOD_ID, Ids.RedDiamondHigherPlacedKey));
@@ -41,7 +46,6 @@ public class LavaDrive
 
 	public static DeferredRegister<Item> LavaDriveItems = DeferredRegister.create(MOD_ID, RegistryKeys.ITEM);
 	public static DeferredRegister<Block> LavaDriveBlocks = DeferredRegister.create(MOD_ID, RegistryKeys.BLOCK);
-
 
 	public static RegistrySupplier<Item> LavaHelmetItem =
 			LavaDriveItems.register(
@@ -124,6 +128,11 @@ public class LavaDrive
 
 	@SuppressWarnings("UnstableApiUsage")
 	public static void init(IModPlatform platform) {
+		TAB_SUPPLIER = TAB_REGISTER.register(String.valueOf(Identifier.tryParse(MOD_ID)), () -> CreativeTabRegistry.create(
+				Text.translatable("item.lavadrive"),
+				() -> new ItemStack(Items.LAVA_BUCKET)));
+		TAB_REGISTER.register();
+
 		LavaDriveBlocks.register();
 		LavaDriveItems.register();
 
