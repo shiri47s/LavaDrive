@@ -18,8 +18,9 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
 public abstract class LavaArmorItem extends ArmorItem {
+    @SuppressWarnings("UnstableApiUsage")
     public LavaArmorItem(ArmorMaterial material, Type type, Settings settings) {
-        super(material, type, settings);
+        super(material, type, settings.arch$tab(LavaDrive.TAB_SUPPLIER));
     }
 
     public static boolean isWearLavaSets(Entity entity) {
