@@ -31,9 +31,6 @@ public class LavaDrive
 	public static final RegistryKey<PlacedFeature> RED_DIAMOND_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(MOD_ID, Ids.RedDiamondPlacedKey));
 	public static final RegistryKey<PlacedFeature> RED_DIAMOND_HIGHER_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(MOD_ID, Ids.RedDiamondHigherPlacedKey));
 
-	private static final DeferredRegister<ItemGroup> TAB_REGISTER = DeferredRegister.create(MOD_ID, RegistryKeys.ITEM_GROUP);
-	public static DeferredSupplier<ItemGroup> TAB_SUPPLIER;
-
 	public static final TagKey<DamageType> INVULNERABLE_DAMAGE_TAG =
 			TagKey.of(
 					RegistryKeys.DAMAGE_TYPE,
@@ -47,15 +44,10 @@ public class LavaDrive
 
 	@SuppressWarnings("UnstableApiUsage")
 	public static void init(IModPlatform platform) {
-		TAB_SUPPLIER = TAB_REGISTER.register(MOD_ID, () -> CreativeTabRegistry.create(
-				Text.translatable("item.tag"),
-				() -> new ItemStack(Items.LAVA_BUCKET)));
-
 		registerBlocks();
 		registerItems();
 		registerArmors();
 		LavaDriveItems.register();
-
 
 		BiomeModifications.addProperties((biomeContext, mutable) -> {
 			if (biomeContext.hasTag(BiomeTags.IS_OVERWORLD)) {
@@ -80,6 +72,8 @@ public class LavaDrive
 				}
 			}
 		});
+
+		platform.RegisterItems();
 	}
 
 	private static void registerBlocks() {

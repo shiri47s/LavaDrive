@@ -1,5 +1,6 @@
 package com.shiri47s.mod.lavadrive.items;
 
+import com.shiri47s.mod.lavadrive.LavaDrive;
 import com.shiri47s.mod.lavadrive.RenderingContext;
 import com.shiri47s.mod.lavadrive.materials.LavaArmorMaterials;
 import net.minecraft.entity.Entity;
